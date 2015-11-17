@@ -7,23 +7,15 @@ Created on Tue Nov 17 17:18:26 2015
 import math
 
 #ex 8.1: gives the nth number of fibonanci suite
- 
-
 
 def fibo(n):
-      if n <= 2:
-          return 1
-      return fibonanci(1,1,n,2):
-
-def fibonanci(previous,last,n,compteur):
-    
-    if compteur == n:
-        return last
-    else:
-        new_last = previous + last
-        previous = last
-        compteur +=1
-        return fibonanci(previous, new_last, n, compteur)
+    # en iteratif:
+    if n <= 2:
+        return 1
+    first, second = 1, 1
+    for i in xrange(n-2):
+        first, second = second, first + second
+    return second
         
 #ex 5.1
  

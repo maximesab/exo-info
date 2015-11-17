@@ -36,26 +36,16 @@ def decimalpart(N):
 
 # ex 8.7: dimes exercice
 
-
-def number_cases(n):
-
-    n25 = ((n/25)%25)
-    
-    #for each number of quarter there is the possibility 
-    #of repressenting it with one piece 5 and 2 of 10
-    
-    n10 = (((n-n25*25)/10)%10)
-    #for each number of dimes there is the possibility 
-    #of repressenting it with 2 piece of 5
-    
-    
-    n5 =(((n- n25*25 - n10*10)/5)%5)
-    #for each number of nickels there is the possibility 
-    #of repressenting it with 5 piece of 1
-    
-    
-    number_of_representation = 1*max(n5*2,1)*max(n10*2*2,1)*max(n25*(2*2+2),1)
-    return number_of_representation
+def number_cases(n, coins=[1, 5, 10, 25]):
+    if len(coins) == 0:
+        return 1 if n == 0 else 0
+    res = 0
+    bigger_coin = coins[-1]
+    other_coins = coins[:-1]
+    while n >= 0:
+        res += number_cases(n, other_coins)
+        n -= bigger_coin
+    return res
         
         
 

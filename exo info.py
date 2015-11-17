@@ -31,8 +31,7 @@ def bitnumbers (N,M,i,j):
         
 
 def decimalpart(N):
-    N1 = N%1
-    return N1
+    return N%1
 
 
 # ex 8.7: dimes exercice

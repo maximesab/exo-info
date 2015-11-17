@@ -8,6 +8,13 @@ import math
 
 #ex 8.1: gives the nth number of fibonanci suite
  
+
+
+def fibo(n):
+      if n <= 2:
+          return 1
+      return fibonanci(1,1,n,2):
+
 def fibonanci(previous,last,n,compteur):
     
     if compteur == n:
